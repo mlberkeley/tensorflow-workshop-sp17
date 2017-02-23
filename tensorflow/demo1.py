@@ -9,7 +9,7 @@ b = a * z
 m, v = tf.nn.moments(b, [0])
 
 sess = tf.Session()
-sess.run(tf.initialize_all_variables())
+sess.run(tf.global_variables_initializer())
 
 sess.run(x)
 sess.run(z)

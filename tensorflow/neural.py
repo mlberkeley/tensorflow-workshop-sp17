@@ -32,7 +32,7 @@ with tf.name_scope('eval'):
 sess = tf.Session()
 merged = tf.merge_all_summaries() # compile all summaries
 writer = tf.train.SummaryWriter("graphs", sess.graph) # writer for events file (graph and learning visualization)
-sess.run(tf.initialize_all_variables()) # variable initialization step
+sess.run(tf.global_variables_initializer()) # variable initialization step
 
 train_steps = 2000
 batch_size = 50
