@@ -16,7 +16,6 @@ W2 = tf.Variable(tf.truncated_normal([200, 10], stddev=0.1))
 b2 = tf.Variable(tf.truncated_normal([10], stddev=0.1))
 y_predict = tf.matmul(h, W2) + b2 #tf.nn.softmax(tf.matmul(h, W2) + b2)
 
-#cross_entropy = tf.reduce_mean(-tf.reduce_sum(y * tf.log(y_predict), reduction_indices=[1]))
 cross_entropy = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=y, logits=y_predict))
 backprop = tf.train.GradientDescentOptimizer(0.5).minimize(cross_entropy) # optimizer backpropagation step
 
